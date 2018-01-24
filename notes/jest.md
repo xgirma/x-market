@@ -1,4 +1,4 @@
-# Jest setup
+# Jest
 
 issue
 <img width="1625" alt="css error" src="https://user-images.githubusercontent.com/5876481/35323419-47589e26-00a2-11e8-9026-94264535cbd3.png">
