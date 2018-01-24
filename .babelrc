@@ -1,8 +1,10 @@
 {
-  "preset": ["env"],
+  "presets": ["env", "react"],
   "env": {
     "test": {
-      "plugins": []
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
     }
   }
 }
