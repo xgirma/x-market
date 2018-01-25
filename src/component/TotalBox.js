@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import sum from '../lib/calculate-total';
 import toLocaleCurrencyString from '../lib/conversion-helper';
+import { itemsType, localeType } from '../types';
+import { itemsDefault, localeDefault } from '../data/default';
 
 class TotalBox extends React.Component {
 	calculateTotalItemPrices = () => {
@@ -20,16 +21,14 @@ class TotalBox extends React.Component {
 	}
 }
 
+export default TotalBox;
+
 TotalBox.propTypes = {
-  items: PropTypes.objectOf(PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    price: PropTypes.number,
-    description: PropTypes.string,
-  }).isRequired).isRequired,
-  locale: PropTypes.objectOf(PropTypes.shape({
-    country: PropTypes.string,
-  }).isRequired).isRequired,
+  items: itemsType,
+  locale: localeType,
 };
 
-export default TotalBox;
+TotalBox.defaultProps = {
+  items: itemsDefault,
+  locale: localeDefault,
+};

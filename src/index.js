@@ -5,7 +5,7 @@ import App from './App';
 import { items, locale } from './data/initial-state';
 import registerServiceWorker from './registerServiceWorker';
 
-const element = <App {...items} locale={locale} />;
+const element = <App items={items} locale={locale} />;
 
 ReactDOM.render(
   element,

@@ -1,7 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import CartItemList from './CartItemList';
 import TotalBox from './TotalBox';
+import { itemsType, localeType } from '../types';
+import { itemsDefault, localeDefault } from '../data/default';
 
 class LocalizationBox extends React.Component {
 	state = {
@@ -29,7 +30,6 @@ class LocalizationBox extends React.Component {
 
 	render() {
 	  const { length } = this.props.items;
-
 	  return (
   <div>
     <form className="locale-form">
@@ -52,16 +52,14 @@ class LocalizationBox extends React.Component {
 	}
 }
 
+export default LocalizationBox;
+
 LocalizationBox.propTypes = {
-  items: PropTypes.objectOf(PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    price: PropTypes.number,
-    description: PropTypes.string,
-  }).isRequired).isRequired,
-  locale: PropTypes.objectOf(PropTypes.shape({
-    country: PropTypes.string,
-  }).isRequired).isRequired,
+  items: itemsType,
+  locale: localeType,
 };
 
-export default LocalizationBox;
+LocalizationBox.defaultProps = {
+  items: itemsDefault,
+  locale: localeDefault,
+};

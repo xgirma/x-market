@@ -18,3 +18,4 @@ const { toString: s } = 123; // s = Number.prototype.toString
 
 ## Refs
 [object destructuring](http://exploringjs.com/es6/ch_destructuring.html)
+[Centralized PropTypes](https://medium.freecodecamp.org/react-pattern-centralized-proptypes-f981ff672f3b)

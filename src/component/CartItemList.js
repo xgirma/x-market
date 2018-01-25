@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CartItem from './CartItem';
+import { itemsType, localeType } from '../types';
+import { itemsDefault, localeDefault } from '../data/default';
 
 const CartItemList = (props) => {
   const {
@@ -29,15 +31,13 @@ const CartItemList = (props) => {
 export default CartItemList;
 
 CartItemList.propTypes = {
-  items: PropTypes.objectOf(PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    price: PropTypes.number,
-    description: PropTypes.string,
-  }).isRequired).isRequired,
-  locale: PropTypes.objectOf(PropTypes.shape({
-    country: PropTypes.string,
-  }).isRequired).isRequired,
+  items: itemsType,
+  locale: localeType,
   onRemove: PropTypes.func.isRequired,
   onReset: PropTypes.func.isRequired,
+};
+
+CartItemList.defaultProps = {
+  items: itemsDefault,
+  locale: localeDefault,
 };
