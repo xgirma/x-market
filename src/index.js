@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import getInitialState from './initial-state';
+import { items, locale } from './data/initial-state';
 import registerServiceWorker from './registerServiceWorker';
 
+const element = <App {...items} locale={locale} />;
+
 ReactDOM.render(
-  <App items={getInitialState()} locale={{ country: 'US' }} />,
+  element,
   document.getElementById('root'),
 );
 registerServiceWorker();

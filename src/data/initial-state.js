@@ -15,7 +15,11 @@ const items = [{
   price: 799.00,
 }];
 
+const locale = {
+  country: 'US',
+};
 
-const getInitialState = () => items;
-
-export default getInitialState;
+export {
+  items,
+  locale,
+};

@@ -1,22 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import LocalizationBox from './component/LocalizationBox';
+import { itemsType, localeType } from './types';
+import { itemsDefault, localeDefault } from './data/default';
 import './App.css';
 
-const App = props => (
-  <div className="App"> <LocalizationBox {...props} /> </div>
-);
-App.propTypes = {
-  items: PropTypes.objectOf(PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
-    price: PropTypes.number,
-    description: PropTypes.string,
-  }).isRequired).isRequired,
-  locale: PropTypes.objectOf(PropTypes.shape({
-    country: PropTypes.object,
-  }).isRequired).isRequired,
-};
-
+function App(props) {
+  return <div className="App"> <LocalizationBox {...props} /> </div>;
+}
 
 export default App;
+
+App.propTypes = {
+  items: itemsType,
+  locale: localeType,
+};
+
+App.defaultProps = {
+  items: itemsDefault,
+  locale: localeDefault,
+};
