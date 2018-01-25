@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import sum from '../lib/calculate-total';
 import toLocaleCurrencyString from '../lib/conversion-helper';
 import { itemsType, localeType } from '../types';
@@ -12,10 +13,18 @@ class TotalBox extends React.Component {
 	};
 
 	render() {
+	  const { onReset } = this.props;
 	  return (
   <div>
-    <h3>Your total: </h3>
-    <h2>{this.calculateTotalItemPrices()}</h2>
+    <div id="reset-btn">
+      <button onClick={() => onReset()}>
+			  Reset your cart
+      </button>
+    </div>
+    <h2>
+      <span>Total: </span>
+      <span>{this.calculateTotalItemPrices()}</span>
+    </h2>
   </div>
 	  );
 	}
@@ -26,6 +35,7 @@ export default TotalBox;
 TotalBox.propTypes = {
   items: itemsType,
   locale: localeType,
+  onReset: PropTypes.func.isRequired,
 };
 
 TotalBox.defaultProps = {

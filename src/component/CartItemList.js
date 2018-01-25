@@ -5,9 +5,7 @@ import { itemsType, localeType } from '../types';
 import { itemsDefault, localeDefault } from '../data/default';
 
 const CartItemList = (props) => {
-  const {
-    items, locale, onRemove, onReset,
-  } = props;
+  const { items, locale, onRemove } = props;
   return (
     <div>
       <div id="item-lst">
@@ -17,12 +15,6 @@ const CartItemList = (props) => {
           locale={locale}
           item={item}
         />))}
-      </div>
-
-      <div id="reset-btn">
-        <button onClick={() => onReset()}>
-					Reset
-        </button>
       </div>
     </div>
   );
@@ -34,7 +26,6 @@ CartItemList.propTypes = {
   items: itemsType,
   locale: localeType,
   onRemove: PropTypes.func.isRequired,
-  onReset: PropTypes.func.isRequired,
 };
 
 CartItemList.defaultProps = {

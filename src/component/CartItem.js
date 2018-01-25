@@ -13,17 +13,21 @@ class CartItem extends React.Component {
 	  const { onRemove } = this.props;
 
 	  return (
-  <section>
-    <h4>{name}</h4>
-    <p>
-							Your price: {' '}
-      <span>{this.getLocalizedCurrencySymbol(price, country)}</span>
-    </p>
-    <p>{description}</p>
-    <button onClick={() => onRemove(this.props.item)}>
-							Remove this item from the cart
-    </button>
-  </section>
+  <div className="Item">
+    <div className="Details">
+      <h4>{name}</h4>
+      <p>{description}</p>
+      <p>
+        <span>{this.getLocalizedCurrencySymbol(price, country)}</span>
+      </p>
+
+      <button onClick={() => onRemove(this.props.item)}>
+			  Remove
+      </button>
+    </div>
+
+
+  </div>
 	  );
 	}
 }

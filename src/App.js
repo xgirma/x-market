@@ -2,7 +2,6 @@ import React from 'react';
 import LocalizationBox from './component/LocalizationBox';
 import { itemsType, localeType } from './types';
 import { itemsDefault, localeDefault } from './data/default';
-import './App.css';
 
 function App({ items, locale }) {
   return <div className="App"> <LocalizationBox items={items} locale={locale} /> </div>;
