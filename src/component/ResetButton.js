@@ -4,7 +4,6 @@ import sum from '../lib/calculate-total';
 import toLocaleCurrencyString from '../lib/conversion-helper';
 import { itemsType, localeType } from '../types';
 import { itemsDefault, localeDefault } from '../data/default';
-import ResetCart from './ResetCart';
 
 class TotalBox extends React.Component {
 	calculateTotalItemPrices = () => {
@@ -17,7 +16,14 @@ class TotalBox extends React.Component {
 	  const { onReset, items } = this.props;
 	  return (
   <div>
-    <ResetCart items={items} onReset={onReset} />
+    <div id="reset-btn">
+      <button
+        disabled={items.length >= 3}
+        onClick={() => onReset()}
+      >
+						Reset your cart
+      </button>
+    </div>
     <h2>
       <span>Total: </span>
       <span>{this.calculateTotalItemPrices()}</span>

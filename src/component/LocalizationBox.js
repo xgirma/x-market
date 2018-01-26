@@ -30,12 +30,11 @@ class LocalizationBox extends React.Component {
 
 	render() {
 	  const { length } = this.state.items;
-	  let closing = '';
-	  closing = length === 1 ? 'item' : 'items';
+	  const closing = length === 1 ? 'item' : 'items';
 	  return (
   <div>
     <form className="locale-form">
-      <h2>Select Country</h2>
+      <h2>X Market</h2>
       <select
         onChange={this.handleCountryChange}
         id="countrySelect"
@@ -47,7 +46,7 @@ class LocalizationBox extends React.Component {
       </select>
     </form>
     <h3>Your Cart {length === 0 ? 'is empty' : (`has ${length} ${closing}`)} </h3>
-    <CartItemList {...this.state} onRemove={this.removeItem} onReset={this.resetItems} />
+    <CartItemList {...this.state} onRemove={this.removeItem} />
     <TotalBox {...this.state} onReset={this.resetItems} />
   </div>
 	  );

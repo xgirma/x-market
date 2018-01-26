@@ -20,6 +20,12 @@ button:hover, .button:hover, input[type="submit"]:hover {
   border: 1px solid #00d800;
 }
 
+button:disabled, button[disabled]{
+  border: 1px solid #fc6d6c;
+  background-color: #cccccc;
+  color: #e10d3d;
+}
+
 select {
   cursor:pointer;
   display:inline-block;
