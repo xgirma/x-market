@@ -32,3 +32,5 @@ ResetCart.propTypes = {
 ResetCart.defaultProps = {
   items: itemsDefault,
 };
+
+ResetCart.displayName = 'ResetCart';

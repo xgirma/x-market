@@ -39,3 +39,5 @@ TotalBox.defaultProps = {
   items: itemsDefault,
   locale: localeDefault,
 };
+
+TotalBox.displayName = 'TotalBox';

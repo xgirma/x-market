@@ -33,8 +33,6 @@ class TotalBox extends React.Component {
 	}
 }
 
-export default TotalBox;
-
 TotalBox.propTypes = {
   items: itemsType,
   locale: localeType,
@@ -45,3 +43,5 @@ TotalBox.defaultProps = {
   items: itemsDefault,
   locale: localeDefault,
 };
+
+TotalBox.displayName = 'TotalBox';

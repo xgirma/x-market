@@ -8,7 +8,9 @@ class CartItem extends React.Component {
 	getLocalizedCurrencySymbol = (price, country) => toLocaleCurrencyString(price, country);
 
 	render() {
-	  const { name, price, description } = this.props.item;
+	  const {
+	    name, price, description,
+	  } = this.props.item;
 	  const { country } = this.props.locale;
 	  const { onRemove } = this.props;
 
@@ -25,8 +27,6 @@ class CartItem extends React.Component {
 			  Remove
       </button>
     </div>
-
-
   </div>
 	  );
 	}
@@ -44,3 +44,5 @@ CartItem.defaultProps = {
   item: itemsDefault,
   locale: localeDefault,
 };
+
+CartItem.displayName = 'CartItem';

@@ -64,3 +64,5 @@ LocalizationBox.defaultProps = {
   items: itemsDefault,
   locale: localeDefault,
 };
+
+LocalizationBox.displayName = 'LocalizationBox';
