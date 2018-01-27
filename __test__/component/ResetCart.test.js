@@ -23,20 +23,20 @@ describe('ResetCart', () => {
   });
 
   it('it always renders a single div', () => {
-  	const divs = resetCart().find('div');
-  	expect(divs.length).toEqual(1);
+    const divs = resetCart().find('div');
+    expect(divs.length).toEqual(1);
   });
 
   it('with default, which contains only two items, should render reset button', () => {
-	  const resetButton = resetCart().find('button');
-	  expect(resetButton.length).toEqual(1);
-	  expect(resetButton.text()).toEqual('Reset your cart');
+    const resetButton = resetCart().find('button');
+    expect(resetButton.length).toEqual(1);
+    expect(resetButton.text()).toEqual('Reset your cart');
   });
 
   it('with three items should not render reset button', () => {
-  	props.items = three;
-	  const resetButton = resetCart().find('button');
-	  expect(resetButton.length).toEqual(0);
+    props.items = three;
+    const resetButton = resetCart().find('button');
+    expect(resetButton.length).toEqual(0);
   });
 
   it('with four items should not render reset button', () => {
@@ -46,16 +46,16 @@ describe('ResetCart', () => {
   });
 
   it('with empty array it should render reset button', () => {
-	  props.items = none;
-	  const resetButton = resetCart().find('button');
-	  expect(resetButton.length).toEqual(1);
-	  expect(resetButton.text()).toEqual('Reset your cart');
+    props.items = none;
+    const resetButton = resetCart().find('button');
+    expect(resetButton.length).toEqual(1);
+    expect(resetButton.text()).toEqual('Reset your cart');
   });
 
   it('with array of an empty object it should render reset button', () => {
     props.items = empty;
     const resetButton = resetCart().find('button');
     expect(resetButton.length).toEqual(1);
-	  expect(resetButton.text()).toEqual('Reset your cart');
+    expect(resetButton.text()).toEqual('Reset your cart');
   });
 });

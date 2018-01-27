@@ -1,4 +1,3 @@
-**/node_modules/**
-**/build/**
-**/public/**
-**/src/registerServiceWorker.js
+build/*
+public/**
+/src/registerServiceWorker.js
