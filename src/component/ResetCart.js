@@ -5,19 +5,13 @@ import { itemsDefault } from '../data/default';
 
 function ResetCart(props) {
   const { onReset, items } = props;
-  if (items.length < 3) {
-  	return (
-    <button
-      onClick={() => onReset()}
-    >
-		  Reset your cart
-    </button>
-	  );
-  }
-  return (
+
+  return (items.length < 3 ? (
     <div>
-      {''}
-    </div>
+      <button id="reset=button" onClick={() => onReset()}>
+	      Reset your cart
+      </button>
+    </div>) : (<div />)
   );
 }
 
