@@ -9,7 +9,7 @@ function ResetCart(props) {
   return (items.length < 3 ? (
     <div>
       <button id="reset=button" onClick={() => onReset()}>
-	      Reset your cart
+        Reset your cart
       </button>
     </div>) : (<div />)
   );

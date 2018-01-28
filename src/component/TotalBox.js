@@ -7,24 +7,23 @@ import { itemsDefault, localeDefault } from '../data/default';
 import ResetCart from './ResetCart';
 
 class TotalBox extends React.Component {
-	calculateTotalItemPrices = () => {
-	  const { items, locale } = this.props;
-	  const totalPrice = sum(items.map(item => item.price));
-	  return toLocaleCurrencyString(totalPrice, locale.country);
-	};
+calculateTotalItemPrices = () => {
+  const { items, locale } = this.props;
+  const totalPrice = sum(items.map(item => item.price));
+  return toLocaleCurrencyString(totalPrice, locale.country);
+};
 
-	render() {
-	  const { onReset, items } = this.props;
-	  return (
-  <div>
-    <ResetCart items={items} onReset={onReset} />
-    <h2>
-      <span>Total: </span>
-      <span>{this.calculateTotalItemPrices()}</span>
-    </h2>
-  </div>
-	  );
-	}
+render() {
+  const { onReset, items } = this.props;
+  return (
+    <div>
+      <ResetCart items={items} onReset={onReset} />
+      <h2 id="total">
+        Total: {this.calculateTotalItemPrices()}
+      </h2>
+    </div>
+  );
+}
 }
 
 export default TotalBox;

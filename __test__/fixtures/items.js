@@ -1,4 +1,4 @@
-const four = [{
+const FOUR = [{
   id: 101,
   name: 'iPhone X',
   description: 'Say hello to the future.',
@@ -21,7 +21,7 @@ const four = [{
   price: 799.00,
 }];
 
-const three = [{
+const THREE = [{
   id: 101,
   name: 'iPhone X',
   description: 'Say hello to the future.',
@@ -38,13 +38,37 @@ const three = [{
   price: 799.00,
 }];
 
-const none = [];
+const NONE = [];
 
-const empty = [{}];
+const EMPTY = [{}];
+
+const ITEM_DEFAULT = {
+  id: 0,
+  name: '',
+  description: '',
+  price: 0.00,
+};
+
+const ITEMS_DEFAULT = [
+  {
+    id: 0,
+    name: '',
+    description: '',
+    price: 0.00,
+  },
+  {
+    id: 1,
+    name: '',
+    description: '',
+    price: 0.00,
+  },
+];
 
 export {
-  four,
-  three,
-  none,
-  empty,
+  FOUR,
+  THREE,
+  NONE,
+  EMPTY,
+  ITEM_DEFAULT,
+  ITEMS_DEFAULT,
 };
