@@ -1,3 +1,4 @@
 build/*
 public/**
 /src/registerServiceWorker.js
+!__test__

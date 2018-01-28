@@ -16,6 +16,6 @@ const toCurrencyString = price => price.toFixed();
 
 const convertFromUSD = (locale, price) => (price * rates[locale]);
 
-const toLocaleCurrencyString = (price, locale = 'US') => `${getCurrencySymbolForCountry(locale)}${toCurrencyString(convertFromUSD(locale, price))}`;
+const toLocaleCurrencyString = (price = 0, locale = 'US') => `${getCurrencySymbolForCountry(locale)}${toCurrencyString(convertFromUSD(locale, price))}`;
 
 export default toLocaleCurrencyString;
