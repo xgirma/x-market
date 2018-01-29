@@ -30,7 +30,7 @@ describe('TotalBox', () => {
 
   it('default: should have total equals 0', () => {
     const wrapper = totalBox().find('div');
-    expect(wrapper.find('#total').text()).toEqual('Total: $0');
+    expect(wrapper.find('#total').text()).toEqual('Total: $ 0');
   });
 
   it('default: should render reset button', () => {
@@ -42,20 +42,20 @@ describe('TotalBox', () => {
     props.locale = US;
     props.items = THREE;
     const wrapper = totalBox().find('div');
-    expect(wrapper.find('#total').text()).toEqual('Total: $4797');
+    expect(wrapper.find('#total').text()).toEqual('Total: $ 4797');
   });
 
   it('Total should be kr44096', () => {
     props.locale = SE;
     props.items = FOUR;
     const wrapper = totalBox().find('div');
-    expect(wrapper.find('#total').text()).toEqual('Total: kr44096');
+    expect(wrapper.find('#total').text()).toEqual('Total: kr 44096');
   });
 
   it('Total should be €3886', () => {
     props.locale = BE;
     props.items = THREE;
     const wrapper = totalBox().find('div');
-    expect(wrapper.find('#total').text()).toEqual('Total: €3886');
+    expect(wrapper.find('#total').text()).toEqual('Total: € 3886');
   });
 });

@@ -38,7 +38,7 @@ describe('CartItem', () => {
     expect(item.length).toBeGreaterThan(0);
     expect(title.text()).toEqual('');
     expect(description.text()).toEqual('');
-    expect(price.text()).toEqual('$0');
+    expect(price.text()).toEqual('$ 0');
     expect(btnRemove).toHaveLength(1);
   });
 
@@ -55,7 +55,7 @@ describe('CartItem', () => {
     expect(details).toHaveLength(1);
     expect(title.text()).toEqual('');
     expect(description.text()).toEqual('');
-    expect(price.text()).toEqual('€0');
+    expect(price.text()).toEqual('€ 0');
     expect(btnRemove).toHaveLength(1);
   });
 });

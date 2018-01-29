@@ -1,12 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ResetCart from '../../src/component/ResetCart';
-import {
-  FOUR,
-  THREE,
-  NONE,
-  EMPTY,
-} from '../fixtures/items';
+import { FOUR, THREE, NONE, EMPTY } from '../fixtures/items';
 
 describe('ResetCart', () => {
   let props;
