@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import CartItemList from '../../src/component/CartItemList';
+import renderer from 'react-test-renderer';
 
 describe('CartItemList', () => {
   let props;
@@ -24,5 +25,18 @@ describe('CartItemList', () => {
   it('should always renders a two div', () => {
     const wrapper = cartItemList().find('div');
     expect(wrapper).toHaveLength(2);
+  });
+});
+
+describe('CartItemList: snapshot', () => {
+  it('should render correctly', () => {
+    const tree = renderer
+      .create(<CartItemList
+        items={[{}]}
+        locale={{}}
+        onRemove={jest.fn()}
+      />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

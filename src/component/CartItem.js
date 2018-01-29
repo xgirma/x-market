@@ -18,7 +18,7 @@ class CartItem extends React.Component {
           <h4 id="name">{name}</h4>
           <p id="description">{translate(description)}</p>
           <p id="price">
-            <span>{this.getLocalizedCurrencySymbol(price, country)}</span>
+            {this.getLocalizedCurrencySymbol(price, country)}
           </p>
           <button
             id="btnRemove"

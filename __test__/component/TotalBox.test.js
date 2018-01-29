@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import TotalBox from '../../src/component/TotalBox';
 import { THREE, FOUR } from '../fixtures/items';
 import { US, SE, BE } from '../fixtures/locale';
+import renderer from 'react-test-renderer';
 
 describe('TotalBox', () => {
   let props;
@@ -57,5 +58,18 @@ describe('TotalBox', () => {
     props.items = THREE;
     const wrapper = totalBox().find('div');
     expect(wrapper.find('#total').text()).toEqual('Total: € 3886');
+  });
+});
+
+describe('TotalBox: snapshot', () => {
+  it('should render correctly', () => {
+    const tree = renderer
+      .create(<TotalBox
+        items={[{}]}
+        locale={{}}
+        onReset={jest.fn()}
+      />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import LocalizationBox from '../../src/component/LocalizationBox';
 import { LOCALE_DEFAULT } from '../fixtures/locale';
 import { FOUR, NONE, ITEMS_DEFAULT } from '../fixtures/items';
+import renderer from 'react-test-renderer';
 
 describe('LocalizationBox', () => {
   let props;
@@ -48,5 +49,17 @@ describe('LocalizationBox', () => {
     props.items = FOUR;
     const message = localizationBox().find('#message');
     expect(message.text()).toEqual('Your cart has 4 items');
+  });
+});
+
+describe('LocalizationBox: snapshot', () => {
+  it('should render correctly', () => {
+    const tree = renderer
+      .create(<LocalizationBox
+        items={[{}]}
+        locale={{}}
+      />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

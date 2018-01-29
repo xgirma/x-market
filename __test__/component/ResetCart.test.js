@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import ResetCart from '../../src/component/ResetCart';
 import { FOUR, THREE, NONE, EMPTY } from '../fixtures/items';
+import renderer from 'react-test-renderer';
 
 describe('ResetCart', () => {
   let props;
@@ -56,5 +57,17 @@ describe('ResetCart', () => {
     const btnReset = resetCart().find('button');
     expect(btnReset).toHaveLength(1);
     expect(btnReset.text()).toEqual('Reset your cart');
+  });
+});
+
+describe('ResetCart: snapshot', () => {
+  it('should render correctly', () => {
+    const tree = renderer
+      .create(<ResetCart
+        items={[{}]}
+        onReset={jest.fn()}
+      />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

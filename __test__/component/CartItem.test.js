@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import CartItem from '../../src/component/CartItem';
 import { ITEM_DEFAULT } from '../fixtures/items';
 import { BE } from '../fixtures/locale';
@@ -22,6 +23,7 @@ describe('CartItem', () => {
     };
     mountCartItem = undefined;
   });
+
 
   it('should always renders a single div', () => {
     const wrapper = cartItem().find('.Item');
@@ -57,5 +59,22 @@ describe('CartItem', () => {
     expect(description.text()).toEqual('');
     expect(price.text()).toEqual('€ 0');
     expect(btnRemove).toHaveLength(1);
+  });
+
+  it('should click', () => {
+
+  });
+});
+
+describe('CartItem: snapshot', () => {
+  it('should render correctly', () => {
+    const tree = renderer
+      .create(<CartItem
+        item={{}}
+        locale={{}}
+        onRemove={jest.fn()}
+      />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });
