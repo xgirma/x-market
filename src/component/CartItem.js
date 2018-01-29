@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { itemType, localeType, translateType } from '../types';
 import toLocaleCurrencyString from '../lib/conversion-helper';
+import { itemType, localeType, translateType } from '../types';
 import { itemsDefault, localeDefault, translateDefault } from '../data/default';
 
 class CartItem extends React.Component {
   getLocalizedCurrencySymbol = (price, country) => toLocaleCurrencyString(price, country);
+
   render() {
-    const {
-      name, price, description,
-    } = this.props.item;
+    const { name, price, description } = this.props.item;
     const { country } = this.props.locale;
-    const { onRemove, translate } = this.props;
+    const { onRemove, translate, item } = this.props;
+
     return (
       <div className="Item">
         <div className="Details">
@@ -22,7 +22,7 @@ class CartItem extends React.Component {
           </p>
           <button
             id="btnRemove"
-            onClick={() => onRemove(this.props.item)}
+            onClick={() => onRemove(item)}
           >{translate('REMOVE')}
           </button>
         </div>

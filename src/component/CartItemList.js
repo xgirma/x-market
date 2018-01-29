@@ -9,6 +9,7 @@ const CartItemList = (props) => {
   const {
     items, locale, onRemove, translate,
   } = props;
+
   return (
     <div>
       <div id="item-lst">

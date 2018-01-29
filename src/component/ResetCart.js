@@ -5,6 +5,7 @@ import { itemsDefault, translateDefault } from '../data/default';
 
 function ResetCart(props) {
   const { onReset, items, translate } = props;
+
   return (items.length < 3 ? (
     <div>
       <button id="reset=button" onClick={() => onReset()}>
