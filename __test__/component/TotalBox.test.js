@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import TotalBox from '../../src/component/TotalBox';
 import { THREE, FOUR } from '../fixtures/items';
-import { US, UK, BE } from '../fixtures/locale';
+import { US, SE, BE } from '../fixtures/locale';
 
 describe('TotalBox', () => {
   let props;
@@ -45,11 +45,11 @@ describe('TotalBox', () => {
     expect(wrapper.find('#total').text()).toEqual('Total: $4797');
   });
 
-  it('Total should be £3973', () => {
-    props.locale = UK;
+  it('Total should be kr44096', () => {
+    props.locale = SE;
     props.items = FOUR;
     const wrapper = totalBox().find('div');
-    expect(wrapper.find('#total').text()).toEqual('Total: £3973');
+    expect(wrapper.find('#total').text()).toEqual('Total: kr44096');
   });
 
   it('Total should be €3886', () => {

@@ -17,13 +17,7 @@ button, .button, input[type="submit"] {
 
 button:hover, .button:hover, input[type="submit"]:hover {
   background-color: green;
-  border: 1px solid #00d800;
-}
-
-button:disabled, button[disabled]{
-  border: 1px solid #fc6d6c;
-  background-color: #cccccc;
-  color: #e10d3d;
+  border: 1px solid #e10d3d;
 }
 
 select {

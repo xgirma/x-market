@@ -1,3 +1,5 @@
+import Translate from '../lib/Translate';
+
 const itemDefault = {
   id: 0,
   name: '',
@@ -24,8 +26,11 @@ const localeDefault = {
   country: 'US',
 };
 
+const translateDefault = new Translate('US').translate;
+
 export {
   itemDefault,
   itemsDefault,
   localeDefault,
+  translateDefault,
 };

@@ -35,18 +35,18 @@ describe('LocalizationBox', () => {
 
   it('default: should have two items', () => {
     const message = localizationBox().find('#message');
-    expect(message.text()).toEqual('Your Cart has 2 items');
+    expect(message.text()).toEqual('Your cart has 2 items');
   });
 
   it('no item in the cart', () => {
     props.items = NONE;
     const message = localizationBox().find('#message');
-    expect(message.text()).toEqual('Your Cart is empty');
+    expect(message.text()).toEqual('Your cart is empty');
   });
 
   it('three item in the cart', () => {
     props.items = FOUR;
     const message = localizationBox().find('#message');
-    expect(message.text()).toEqual('Your Cart has 4 items');
+    expect(message.text()).toEqual('Your cart has 4 items');
   });
 });

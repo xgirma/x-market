@@ -2,10 +2,15 @@
   "I_PHONE_DESCRIPTION": "Say hello to the future.",
   "MAC_PRO_DESCRIPTION": "Built for creativity on an epic scale.",
   "I_PAD_PRO_DESCRIPTION": "Anything you can do, you can do better.",
-  "REMOVE": "Remove.",
-  "RESET_YOUR_CART": "Rest your cart",
+  "REMOVE": "Remove",
+  "RESET": "Rest your cart",
   "TOTAL": "Total",
-  "EMPTY_CART": "Your cart is empty",
-  "YOUR_CART_HAS": "Your cart has",
-  "ITEMS": "items"
+  "YOUR_CART": "Your cart",
+  "HAS": "has",
+  "ITEMS": "items",
+  "ITEM": "item",
+  "IS_EMPTY": "is empty",
+  "UNITED_STATES": "United States",
+  "BELGIUM": "Belgium",
+  "SWEDEN": "Sweden"
 }

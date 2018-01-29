@@ -2,8 +2,8 @@ const US = {
   country: 'US',
 };
 
-const UK = {
-  country: 'UK',
+const SE = {
+  country: 'SE',
 };
 
 const BE = {
@@ -16,7 +16,7 @@ const LOCALE_DEFAULT = {
 
 export {
   US,
-  UK,
+  SE,
   BE,
   LOCALE_DEFAULT,
 };
