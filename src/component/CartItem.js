@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import toLocaleCurrencyString from '../lib/conversion-helper';
 import { itemType, localeType, translateType } from '../types';
 import { itemsDefault, localeDefault, translateDefault } from '../data/default';
 
-class CartItem extends React.Component {
+class CartItem extends Component {
+	static displayName = 'CartItem';
+
+  static propTypes = {
+	  item: itemType,
+	  locale: localeType,
+	  onRemove: PropTypes.func.isRequired,
+	  translate: translateType,
+  };
+
+  static defaultProps = {
+	  item: itemsDefault,
+	  locale: localeDefault,
+	  translate: translateDefault,
+  };
+
   getLocalizedCurrencySymbol = (price, country) => toLocaleCurrencyString(price, country);
 
   render() {
@@ -32,18 +47,3 @@ class CartItem extends React.Component {
 }
 
 export default CartItem;
-
-CartItem.propTypes = {
-  item: itemType,
-  locale: localeType,
-  onRemove: PropTypes.func.isRequired,
-  translate: translateType,
-};
-
-CartItem.defaultProps = {
-  item: itemsDefault,
-  locale: localeDefault,
-  translate: translateDefault,
-};
-
-CartItem.displayName = 'CartItem';

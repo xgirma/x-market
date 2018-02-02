@@ -17,16 +17,15 @@ function ResetCart(props) {
 
 export default ResetCart;
 
+ResetCart.displayName = 'ResetCart';
+
 ResetCart.propTypes = {
   onReset: PropTypes.func.isRequired,
   items: itemsType,
   translate: translateType,
 };
 
-
 ResetCart.defaultProps = {
   items: itemsDefault,
   translate: translateDefault,
 };
-
-ResetCart.displayName = 'ResetCart';

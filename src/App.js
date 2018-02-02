@@ -1,12 +1,26 @@
 import React, { Component } from 'react';
 import { itemsType, localeType, translateType } from './types';
 import { itemsDefault, localeDefault, translateDefault } from './data/default';
-import LocalizationBox from './component/Localization';
+import Localization from './component/Localization';
 import CartItemList from './component/CartItemList';
-import TotalBox from './component/TotalBox';
+import Total from './component/TotalBox';
 import Translate from './lib/Translate';
 
 class Application extends Component {
+	static displayName = 'App';
+
+	static propTypes = {
+	  items: itemsType,
+	  locale: localeType,
+	  translate: translateType,
+	};
+
+	static defaultProps = {
+	  items: itemsDefault,
+	  locale: localeDefault,
+	  translate: translateDefault,
+	};
+
 	state = {
 	  items: this.props.items,
 	  locale: this.props.locale,
@@ -14,7 +28,9 @@ class Application extends Component {
 	};
 
 	handleLocale = (newLocale) => {
+	  // eslint-disable-next-line no-unused-vars
 	  this.setState(state => ({ locale: newLocale }));
+	  // eslint-disable-next-line no-unused-vars
 	  this.setState(state => ({ translate: new Translate(newLocale.country).translate }));
 	};
 
@@ -31,28 +47,15 @@ class Application extends Component {
 	};
 
 	render() {
-	  const { translate } = this.state;
 	  return (
   <div className="App">
     <h2>X Market</h2>
 
-    <LocalizationBox translate={translate} onLocaleChange={this.handleLocale} />
+    <Localization translate={this.state.translate} onLocaleChange={this.handleLocale} />
     <CartItemList {...this.state} onRemove={this.removeItem} />
-    <TotalBox {...this.state} onReset={this.resetItems} />
+    <Total {...this.state} onReset={this.resetItems} />
   </div>);
 	}
 }
 
 export default Application;
-
-Application.propTypes = {
-  items: itemsType,
-  locale: localeType,
-  translate: translateType,
-};
-
-Application.defaultProps = {
-  items: itemsDefault,
-  locale: localeDefault,
-  translate: translateDefault,
-};

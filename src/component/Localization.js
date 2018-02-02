@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Translate from '../lib/Translate';
 import { translateType } from '../types';
 import { translateDefault } from '../data/default';
 
-class LocalizationBox extends React.Component {
-  state = {
-    translate: this.props.translate,
+class Localization extends Component {
+	static displayName = 'Localization';
+
+  static propTypes = {
+	  translate: translateType,
+	  onLocaleChange: PropTypes.func.isRequired,
   };
+
+  static defaultProps = {
+	  translate: translateDefault,
+  };
+
+	state = {
+	  translate: this.props.translate,
+	};
 
   handleCountry = ({ target: { value } }) => {
     const { onLocaleChange } = this.props;
@@ -38,15 +49,4 @@ class LocalizationBox extends React.Component {
   }
 }
 
-export default LocalizationBox;
-
-LocalizationBox.propTypes = {
-  translate: translateType,
-  onLocaleChange: PropTypes.func.isRequired,
-};
-
-LocalizationBox.defaultProps = {
-  translate: translateDefault,
-};
-
-LocalizationBox.displayName = 'LocalizationBox';
+export default Localization;

@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import CartItem from './CartItem';
 import { itemsType, localeType, translateType } from '../types';
 import { itemsDefault, localeDefault, translateDefault } from '../data/default';
 
-class CartItemList extends React.Component {
+// eslint-disable-next-line react/prefer-stateless-function
+class CartItemList extends Component {
+  static propTypes = {
+	  items: itemsType,
+	  locale: localeType,
+	  onRemove: PropTypes.func.isRequired,
+	  translate: translateType,
+  };
+
+  static defaultProps = {
+	  items: itemsDefault,
+	  locale: localeDefault,
+	  translate: translateDefault,
+  };
+
+  static displayName = 'CartItemList';
+
   render() {
 	  const {
       items, locale, onRemove, translate,
@@ -37,18 +53,3 @@ class CartItemList extends React.Component {
 }
 
 export default CartItemList;
-
-CartItemList.propTypes = {
-  items: itemsType,
-  locale: localeType,
-  onRemove: PropTypes.func.isRequired,
-  translate: translateType,
-};
-
-CartItemList.defaultProps = {
-  items: itemsDefault,
-  locale: localeDefault,
-  translate: translateDefault,
-};
-
-CartItemList.displayName = 'CartItemList';
