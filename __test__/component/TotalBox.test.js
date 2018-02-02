@@ -1,18 +1,18 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TotalBox from '../../src/component/TotalBox';
+import renderer from 'react-test-renderer';
+import Total from '../../src/component/Total';
 import { THREE, FOUR } from '../fixtures/items';
 import { US, SE, BE } from '../fixtures/locale';
-import renderer from 'react-test-renderer';
 
-describe('TotalBox', () => {
+describe('Total', () => {
   let props;
-  let mountTotalBox;
+  let renderTotal;
   const totalBox = () => {
-    if (!mountTotalBox) {
-      mountTotalBox = shallow(<TotalBox {...props} />);
+    if (!renderTotal) {
+      renderTotal = shallow(<Total {...props} />);
     }
-    return mountTotalBox;
+    return renderTotal;
   };
 
   beforeEach(() => {
@@ -21,7 +21,7 @@ describe('TotalBox', () => {
       locale: undefined,
       onReset: jest.fn(),
     };
-    mountTotalBox = undefined;
+    renderTotal = undefined;
   });
 
   it('should always renders a single div', () => {
@@ -61,10 +61,10 @@ describe('TotalBox', () => {
   });
 });
 
-describe('TotalBox: snapshot', () => {
+describe('Total: snapshot', () => {
   it('should render correctly', () => {
     const tree = renderer
-      .create(<TotalBox
+      .create(<Total
         items={[{}]}
         locale={{}}
         onReset={jest.fn()}

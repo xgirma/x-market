@@ -3,7 +3,7 @@ import { itemsType, localeType, translateType } from './types';
 import { itemsDefault, localeDefault, translateDefault } from './data/default';
 import Localization from './component/Localization';
 import CartItemList from './component/CartItemList';
-import Total from './component/TotalBox';
+import Total from './component/Total';
 import Translate from './lib/Translate';
 
 class Application extends Component {

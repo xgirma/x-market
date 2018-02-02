@@ -15,11 +15,18 @@ const FOUR = [{
   price: 799.00,
 },
 {
-  id: 103,
+  id: 104,
   name: 'iPad Pro',
   description: 'Anything you can do, you can do better.',
   price: 799.00,
 }];
+
+const ITEM_TO_REMOVE = {
+  id: 104,
+  name: 'iPad Pro',
+  description: 'Anything you can do, you can do better.',
+  price: 799.00,
+};
 
 const THREE = [{
   id: 101,
@@ -71,4 +78,5 @@ export {
   EMPTY,
   ITEM_DEFAULT,
   ITEMS_DEFAULT,
+  ITEM_TO_REMOVE,
 };

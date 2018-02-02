@@ -7,12 +7,12 @@ import { BE } from '../fixtures/locale';
 
 describe('CartItem', () => {
   let props;
-  let mountCartItem;
+  let renderCartItem;
   const cartItem = () => {
-    if (!mountCartItem) {
-      mountCartItem = shallow(<CartItem {...props} />);
+    if (!renderCartItem) {
+      renderCartItem = shallow(<CartItem {...props} />);
     }
-    return mountCartItem;
+    return renderCartItem;
   };
 
   beforeEach(() => {
@@ -21,7 +21,7 @@ describe('CartItem', () => {
       locale: undefined,
       onRemove: jest.fn(),
     };
-    mountCartItem = undefined;
+    renderCartItem = undefined;
   });
 
 

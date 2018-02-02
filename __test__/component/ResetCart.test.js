@@ -1,17 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import renderer from 'react-test-renderer';
 import ResetCart from '../../src/component/ResetCart';
 import { FOUR, THREE, NONE, EMPTY } from '../fixtures/items';
-import renderer from 'react-test-renderer';
 
 describe('ResetCart', () => {
   let props;
-  let mountResetCart;
+  let renderResetCart;
   const resetCart = () => {
-    if (!mountResetCart) {
-      mountResetCart = shallow(<ResetCart {...props} />);
+    if (!renderResetCart) {
+      renderResetCart = shallow(<ResetCart {...props} />);
     }
-    return mountResetCart;
+    return renderResetCart;
   };
 
   beforeEach(() => {
@@ -19,7 +19,7 @@ describe('ResetCart', () => {
       items: undefined,
       onReset: jest.fn(),
     };
-    mountResetCart = undefined;
+    renderResetCart = undefined;
   });
 
   it('should always renders a single div', () => {

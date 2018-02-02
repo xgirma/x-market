@@ -1,16 +1,17 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import CartItemList from '../../src/component/CartItemList';
 import renderer from 'react-test-renderer';
+import { shallow } from 'enzyme';
+import { FOUR, NONE } from '../fixtures/items';
+import CartItemList from '../../src/component/CartItemList';
 
 describe('CartItemList', () => {
   let props;
-  let mountCartItemList;
+  let renderCartItemList;
   const cartItemList = () => {
-    if (!mountCartItemList) {
-      mountCartItemList = shallow(<CartItemList {...props} />);
+    if (!renderCartItemList) {
+      renderCartItemList = shallow(<CartItemList {...props} />);
     }
-    return mountCartItemList;
+    return renderCartItemList;
   };
 
   beforeEach(() => {
@@ -19,12 +20,29 @@ describe('CartItemList', () => {
       locale: undefined,
       onRemove: jest.fn(),
     };
-    mountCartItemList = undefined;
+    renderCartItemList = undefined;
   });
 
-  it('should always renders a two div', () => {
+  it('should always renders', () => {
     const wrapper = cartItemList().find('div');
-    expect(wrapper).toHaveLength(2);
+    expect(wrapper.length).toBeGreaterThan(0);
+  });
+
+  it('default: should have two items', () => {
+    const message = cartItemList().find('#message');
+    expect(message.text()).toEqual('Your cart has 2 items');
+  });
+
+  it('no item in the cart', () => {
+	  props.items = NONE;
+	  const message = cartItemList().find('#message');
+	  expect(message.text()).toEqual('Your cart is empty');
+  });
+
+  it('three item in the cart', () => {
+	  props.items = FOUR;
+	  const message = cartItemList().find('#message');
+	  expect(message.text()).toEqual('Your cart has 4 items');
   });
 });
 
